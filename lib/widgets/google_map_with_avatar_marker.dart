@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapWithAvatarMarker extends StatefulWidget {
-  GoogleMapWithAvatarMarker({Key? key}) : super.key(key);
+  GoogleMapWithAvatarMarker({Key? key}) : super(key: key);
 
-  @override
   State<GoogleMapWithAvatarMarker> get createState => _GoogleMapWithAvatarMarkerState();
 }
 
@@ -36,17 +35,6 @@ class _GoogleMapWithAvatarMarkerState extends State<GoogleMapWithAvatarMarker> {
         markerId: MarkerId('avatarMarker'),
         position: LatLng(0, 0),
         icon: bitmapDescriptor,
-        onTap: () {
-          showModalBottomSheet(
-            context: context,
-            builder: (context) {
-              return Container(
-                height: 200,
-                child: Center(child: Text('User Information')),
-              );
-            },
-          );
-        },
       ));
     });
   }
